@@ -1,3 +1,4 @@
+import Error from "../../components/Error";
 import Loader from "../../components/Loader";
 import Result from "../../components/Search/Result";
 import { useSearch } from "../../hooks/SearchContext";
@@ -12,7 +13,7 @@ const Results = () => {
   );
 
   if (isLoading) return <Loader />;
-  if (isError && error) return <div className="">{error.message}</div>;
+  if (isError && error) return <Error error={error} />
 
   return (
     <div className="grid sm:grid-cols-3 grid-cols-1">

@@ -1,5 +1,6 @@
 // import axios from "axios";
 import { Link } from "react-router-dom";
+import Error from "../../components/Error";
 import Loader from "../../components/Loader";
 import useFetch from "../../hooks/useFetch";
 import abbrNum from "../../utils/abbrNum";
@@ -43,7 +44,8 @@ const ArtistResults = () => {
   // };
 
   if (isLoading) return <Loader />;
-  if (isError && error) return <div className="mt-12">{error.message}</div>;
+  if (isError && error) return <Error error={error} />
+
 
   return (
     <div>
